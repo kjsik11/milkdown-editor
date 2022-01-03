@@ -1,7 +1,7 @@
-/**
- * @template PageComponent
- */
+import dynamic from 'next/dynamic';
 
 export default function IndexPage() {
-  return <div>COXWAVE</div>;
+  const EditorComponent = dynamic(() => import('@src/frontend/editor/Editor'), { ssr: false });
+
+  return <EditorComponent />;
 }
